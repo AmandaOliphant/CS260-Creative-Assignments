@@ -1,0 +1,18 @@
+#jumbotron-header {
+    background-image: url(./images/notepad.jpg);
+    background-size: cover;
+    height: 100%;
+    font-family: Palatino;
+}
+
+body {
+    font-family: Palatino;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.summary {
+    display: none;
+}
