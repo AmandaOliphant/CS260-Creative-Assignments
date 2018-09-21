@@ -16,18 +16,22 @@
         <h4>For all the recommendations you get and give</h4>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="#">MyRecs</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav mr-auto">
+          <a class="nav-item nav-link active" href="">Home<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="my-recs.html">Recommended to Me</a>
           <a class="nav-item nav-link" href="rec-list.html">My Rec List</a>
-        </div>
-      </div>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search MyRecs">
+            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+     </div>
   </nav>
 
   <div class="container" style="margin-top:30px">
@@ -47,7 +51,7 @@
               up here and add it to your list. Got an empty list?
               Browse your friends' Rec Lists to find something new. Don't forget
               to keep track of the things you love so you can recommend them to others!</p>
-              <h5>MyRecs is still under construction, but click any of the images below to get a summary of one of Amanda's Recs!</h5>
+              <h4>Click on any of the images below to get a summary of one of Amanda's Recs!</h4>
           </div>
       </div>
 
@@ -187,10 +191,11 @@
     </div>
 
 
-    <div class="jumbotron text-center top-buffer" id="jumbotron-footer" style="margin-bottom:0">
-        <p>Copyright © 2018 Amanda Oliphant</p>
-        <p>Credit and copyright for all images go to their respective owners</p>
-    </div>
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container text-center">
+            <span class="text-muted">Copyright © 2018 Amanda Oliphant</span>
+        </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -16,24 +16,54 @@
         <h4>For all the recommendations you get and give</h4>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="#">MyRecs</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link active" href="">Recommended to Me<span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#">Recommended to Me</a>
           <a class="nav-item nav-link" href="rec-list.html">My Rec List</a>
-        </div>
-      </div>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search MyRecs">
+            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+     </div>
   </nav>
 
-  <div class="jumbotron text-center" id="jumbotron-footer" style="margin-bottom:0">
-      <p>Copyright © 2018 Amanda Oliphant</p>
-      <p>Credit and copyright for all images go to their respective owners</p>
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-8 offset-sm-2 top-buffer text-center">
+              <h3>This page is under construction! Soon you'll be able to track your friends' recommendations here.</h3>
+              <p class="top-buffer">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                  duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                  ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                  nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                  sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                  erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel
+                  eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                  eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+                  facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum
+                  zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta
+                  nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim
+                  assum. Lorem</p>
+          </div>
+      </div>
   </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">Copyright © 2018 Amanda Oliphant</span>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
