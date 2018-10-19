@@ -1,0 +1,119 @@
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.site-content {
+  flex: 1;
+}
+
+.navbar-custom {
+    background: rgba(18, 62, 84, 0.90);
+}
+
+.navbar-text {
+    color: white;
+}
+
+#page-footer {
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: center;
+    height: 75px;
+    line-height: 75px;
+}
+
+.bottom-spacer {
+    width: 100px;
+    height: 100px;
+    float: left;
+    display: inline-block;
+}
+
+.home-background {
+    background-image: url("https://s3.envato.com/files/199164241/nemesis_preview.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+    height: 200px;
+    line-height: 200px;
+    font-family: American Typewriter;
+}
+
+.title-info {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.spinning {
+	animation: spin 10s linear infinite;
+}
+
+.buffered {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.bottom-buffer {
+    margin-bottom: 10px;
+}
+
+.spacer {
+    width: 100px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+}
+
+.rm-button {
+    position: absolute;
+    right: 5;
+    bottom: 0;
+    background-color: black;
+    width: 100px;
+    height: 40px;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+
+.fade1.ng-enter {
+  transition:1s linear all;
+  opacity: 0;
+}
+
+.fade1.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fade1.ng-leave {
+  transition:1s linear all;
+  opacity: 1;
+}
+
+.fade1.ng-leave.ng-leave-active {
+  opacity: 0;
+}
