@@ -1,4 +1,4 @@
-angular.module('Library', ['ui.router', 'ngAnimate'])
+angular.module('Character', ['ui.router', 'ngAnimate'])
     .config([
         '$stateProvider',
         '$urlRouterProvider',
@@ -33,7 +33,11 @@ angular.module('Library', ['ui.router', 'ngAnimate'])
             link: function(scope, elm, attrs) {
                 elm
                     .on('click', function() {
-                        if(scope.clickedCharacters.indexOf(elm) == -1) {
+                        if(scope.clickedCharacters.length === 0) {
+                            scope.audio.play();
+                            scope.numSong = scope.numSong + 1;
+                        }
+                        if(scope.clickedCharacters.indexOf(elm) === -1) {
                             scope.clickedCharacters.push(elm);
                             elm.css('background-color', '#123e54');
                             elm.css('color', 'white');
@@ -46,9 +50,17 @@ angular.module('Library', ['ui.router', 'ngAnimate'])
                             elm.css('color', 'black');
                             angular.element(elm).removeClass('spinning');
                         }
+                        if(scope.clickedCharacters.length === 0) {
+                            var songs = ["audio/agniKai.mp3", "audio/avatarsLove.mp3", "audio/avatarTheme.mp3",
+                                            "audio/daiLi.mp3", "audio/fourSeasons.mp3", "audio/pandaLily.mp3"];
+                            scope.audio.pause();
+                            scope.audio.currentTime = 0;
+                            var newStr = songs[Math.floor(Math.random() * songs.length)];
+                            scope.audio = new Audio(newStr);
+                        }
                     })
                     .on('mouseenter', function() {
-                        if(scope.clickedCharacters.indexOf(elm) == -1) {
+                        if(scope.clickedCharacters.indexOf(elm) === -1) {
                             elm.css('background-color', '#123e54');
                             elm.css('color', 'white');
                         }
@@ -73,6 +85,8 @@ angular.module('Library', ['ui.router', 'ngAnimate'])
         '$http',
         'characterFactory',
         function($scope, $http, characterFactory) {
+            $scope.audio = new Audio('audio/agniKai.mp3');
+            $scope.numSong = 0;
             $scope.showCharacter = true;
             $scope.characters = characterFactory.characters;
             $scope.clickedCharacters = [];
