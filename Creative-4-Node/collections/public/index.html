@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quest</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="javascripts/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #1E0A25;">
+        <a class="navbar-brand navbar-head-text" href="">Quest</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link navbar-text active" href="">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link navbar-text" data-toggle="modal" data-target="#changePageModal">Leaderboard</a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container top-buffer">
+        <div class="page-header text-center" id="jumbotron-header">
+            <h1 class="text-center page-title">Quest: Collect Rupees</h1>
+            <h4 class="text-center page-title">Join the current game and race against others to collect rupees!</h4>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-3 table-responsive" id="playerTable">
+                <table class="table table-bordered table-light player-table">
+                    <thead class="table-header">
+                        <tr>
+                            <th scope="col">Player</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 text-center" id="mainContent">
+                <button type="button" class="startButton btn btn-block" style="height:50px" data-toggle="modal" data-target="#userModal">Join Game</button>
+            </div>
+            <div class="col-md-3 table-responsive text-center">
+                <table class="table table-bordered table-light player-table">
+                    <thead class="table-header">
+                        <tr>
+                            <th colspan="2">Rupee Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="images/greenR.png" alt="green" height=50 width=25</td>
+                                <td class="rupee-value">1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/blueR.jpg" alt="blue" height=50 width=30</td>
+                                <td class="rupee-value">5</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/redR.jpg" alt="red" height=50 width=40</td>
+                                <td class="rupee-value">20</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/purpleR.jpg" alt="purple" height=50 width=40</td>
+                                <td class="rupee-value">50</td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/goldR.jpg" alt="gold" height=50 width=40</td>
+                                <td class="rupee-value">300</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="musicBackOn" class="top-buffer btn btn-success">Music</button>
+                <button type="button" id="musicBackOff" class="top-buffer btn btn-success">No Music</button>
+            </div>
+        </div>
+        <div class="row">
+            <audio class="audio" id="game-song">
+                <source src="music/darkmoon.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold" id="userModalTitle">Enter a Nickname</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <input type="text" id="nickname" class="form-control validate">
+                    </div>
+                    <p class="font-weight-bold">Choose a Color:</p>
+                    <span class="dot-aqua color-dot" id="aquadot"></span>
+                    <span class="dot-pink color-dot" id="pinkdot"></span>
+                    <span class="dot-green color-dot" id="greendot"></span>
+                    <span class="dot-blue color-dot" id="bluedot"></span>
+                    <span class="dot-red color-dot" id="reddot"></span>
+                    <span class="dot-orange color-dot" id="orangedot"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="musicOptionOff" class="btn btn-success">No Music</button>
+                    <button type="button" id="musicOptionOn" class="btn btn-success">Turn on Music!</button>
+                    <button type="button" id="submitNickname" class="btn btn-primary" data-dismiss="modal">Begin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePageModal" tabindex="-1" role="dialog" aria-labelledby="changePageTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold" id="changePageTitle">Warning</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <h5 class="font-weight-bold">Navigating to the Leaderboard will remove you from the game. Press "continue" to confirm.</h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="score.html" class="btn btn-primary">Continue</a>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

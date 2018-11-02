@@ -1,0 +1,22 @@
+body {
+  background: url('https://wallpapersite.com/images/wallpapers/stars-3840x2160-4k-6347.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.page-title {
+    color: white;
+    font-family: "Lucida Console";
+}
+
+.score-table {
+    text-align: center;
+    font-size: 25px;
+    font-family: "Lucida Console";
+}

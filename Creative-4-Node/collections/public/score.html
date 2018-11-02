@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quest</title>
+    <link rel="stylesheet" href="stylesheets/scorestyle.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="javascripts/scorescript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #000d1a;">
+        <a class="navbar-brand navbar-head-text" href="">Quest</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link navbar-text" href="index.html">Home</a>
+                <a class="nav-item nav-link navbar-text active" href="">Leaderboard<span class="sr-only">(current)</span></a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row top-buffer">
+            <div class="col-md-12 text-center">
+                <h1 class="page-title">High Scores</h1>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-12">
+                <table class="table table-dark table-striped table-bordered table-hover score-table" style="background-color: #000d1a;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Link</td>
+                            <td>35,423</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Anonymous Dodongo</td>
+                            <td>28,416</td>
+                        </tr>
+                         <tr>
+                            <th scope="row">3</th>
+                            <td>Amanda</td>
+                            <td>23,587</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>
