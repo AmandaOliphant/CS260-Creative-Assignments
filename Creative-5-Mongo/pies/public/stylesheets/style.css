@@ -1,0 +1,114 @@
+body {
+  background: url('https://i.pinimg.com/originals/1e/fd/4d/1efd4d0e2391389c161c81ed5d271a07.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: white;
+}
+
+.top-buffer {
+  margin-top: 15px;
+}
+
+.bottom-buffer {
+  margin-bottom: 15px;
+}
+
+.buffered {
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbar-title {
+  font-size: 30px;
+}
+
+.pie-navbar {
+  background-color: #701D17;
+  font-family: Luminari, fantasy;
+  font-size: 20px;
+}
+
+.recipe-container {
+  background-color: #FBD98F;
+}
+
+.bg-card {
+  font-family: Georgia, serif;
+  background-color: #701D17;
+}
+
+.card-block {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.spacer {
+  width: 100px;
+  height: 50px;
+  float: left;
+  display: inline-block;
+}
+
+.title-info {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.transparent {
+  background: rgb(204, 204, 204);
+  background: rgba(204, 204, 204, 0.5);
+}
+
+.pie-modal {
+  font-family: Georgia, serif;
+}
+
+.pie-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pie-img-container {
+  border-radius: 10px;
+  background-color: #FBD98F;
+  padding: 20px;
+}
+
+.about-text-container {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #701D17;
+  color: white;
+  font-family: Georgia, serif;
+}
+
+.add-btn {
+  background-color: #701D17;
+  font-family: Georgia, serif;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #95251d;
+}
+
+.btn-close {
+  background-color: #802019;
+  color: white;
+}

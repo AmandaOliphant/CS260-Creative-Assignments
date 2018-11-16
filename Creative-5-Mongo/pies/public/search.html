@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanksgiving Pies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/pie.js"></script>
+</head>
+
+<body ng-app="pie" ng-controller="MainCtrl">
+
+    <nav class="navbar navbar-expand-lg pie-navbar navbar-dark sticky-top">
+        <a class="navbar-brand navbar-title" href="index.html">Thanksgiving Pies</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="">Search Pies</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container top-buffer">
+
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <form class="form-group" ng-submit="searchPies(); getPies()">
+                    <input type="text" class="form-control" placeholder="Enter the name of a pie" ng-model="formContent"></input>
+                    <button type="submit" class="btn btn-lg add-btn top-buffer">Search Pies</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div ng-repeat="pie in foundPies">
+                    <div class="col-6 card buffered bg-card float-right">
+                        <img class="card-img-top top-buffer" ng-src="{{pie.picture}}">
+                        <div class="card-block top-buffer bottom-buffer recipe-container">
+                            <h4 class="top-buffer text-center">{{pie.title}}</h4>
+                            <h6 class="text-center">Contributed by: {{pie.author}}</h6>
+                            <h5 class="top-buffer">Ingredients:</h5>
+                            <li ng-repeat="ingredient in pie.ingredients">
+                                {{ingredient.name}}
+                            </li>
+                            <h5 class="top-buffer">Directions:</h5>
+                            <div ng-repeat="direction in pie.directions">
+                                <span>{{$index+1}}. {{direction.text}}</span>
+                            </div>
+
+                            <button class="btn btn-close btn-sm top-buffer" ng-click="deletePie(pie)">Delete Pie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

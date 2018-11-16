@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thanksgiving Pies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/pie.js"></script>
+</head>
+
+<body ng-app="pie" ng-controller="MainCtrl">
+
+    <nav class="navbar navbar-expand-lg pie-navbar navbar-dark sticky-top">
+        <a class="navbar-brand navbar-title" href="">Thanksgiving Pies</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link active" href="">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="search.html">Search Pies</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container top-buffer">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <button type="button" class="btn top-buffer btn-lg btn-block add-btn" data-toggle="modal" data-target="#addPieModal">Add a Pie</button>
+                <a href="search.html" class="btn top-buffer btn-lg btn-block add-btn">Search Pies</a>
+            </div>
+            <div class="col-sm-8">
+                <div ng-repeat="pie in pies">
+                    <div class="col-8 card buffered bg-card float-right">
+                        <img class="card-img-top top-buffer" ng-src="{{pie.picture}}">
+                        <div class="card-block top-buffer bottom-buffer recipe-container">
+                            <h4 class="top-buffer text-center">{{pie.title}}</h4>
+                            <h6 class="text-center">Contributed by: {{pie.author}}</h6>
+                            <h5 class="top-buffer">Ingredients:</h5>
+                            <li ng-repeat="ingredient in pie.ingredients">
+                                {{ingredient.name}}
+                            </li>
+                            <h5 class="top-buffer">Directions:</h5>
+                            <div ng-repeat="direction in pie.directions">
+                                <span>{{$index+1}}. {{direction.text}}</span>
+                            </div>
+
+                            <button class="btn btn-close btn-sm top-buffer" ng-click="deletePie(pie)">Delete Pie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade pie-modal" id="addPieModal" tabindex="-1" role="dialog" aria-labelledby="addPieTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold" id="changePageTitle">Add a New Pie Recipe</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+
+                        <form name="pieForm" ng-submit="addPie(pieForm)">
+                            <div class="form-group">
+                                <h5 class="top-buffer">Pie Name</h5>
+                                <input placeholder="Pie Name" ng-model="pieForm.title" /><br>
+                                <h5 class="top-buffer">Image URL</h5>
+                                <input placeholder="Enter a URL" ng-model="pieForm.picture" /><br>
+                                <h5 class="top-buffer">Author</h5>
+                                <input placeholder="Your Name" ng-model="pieForm.author" /><br>
+                                <h5 class="top-buffer">Ingredients</h5>
+                                <textarea type="text" class="top-buffer form-control" rows="4" ng-model="pieForm.ingredients" placeholder="List of ingredients (comma-separated) such as '1 can pumpkin, 2 tsp nutmeg, ...'"></textarea>
+                                <h5 class="top-buffer">Directions</h5>
+                                <textarea type="text" class="top-buffer form-control" rows="4" ng-model="pieForm.directions" placeholder="List of directions (comma-separated) such as 'Mix flour and baking soda, scoop pumpkin into a bowl and stir in nutmeg, ...'"></textarea>
+                                <button class="btn btn-info top-buffer" type="submit">Add Pie</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-close top-buffer" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+nohup: ignoring input
+Connected
+[0mGET / [32m200 [0m7.478 ms - 6080[0m
+[0mGET /stylesheets/style.css [36m304 [0m2.305 ms - -[0m
+[0mGET /javascripts/pie.js [36m304 [0m1.030 ms - -[0m
+In the search route!
+[0mGET /pies [36m304 [0m61.814 ms - -[0m
