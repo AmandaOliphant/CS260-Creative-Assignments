@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <title>Creative2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Import Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <div id="titleImg" class="jumbotron text-right"><span style="padding-right: 5%">Magic</span><br><span style="padding-right: 5%">Translator</span></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 search-col">
+                <div>
+                    <h5>Choose a Magic Card:</h5>
+                    <form class="form-inline my-2 my-lg-0" action="">
+                        <input class="form-control mr-sm-2 col-lg-8" type="text" id="cardNameField" list="card-datalist" placeholder="Search Magic Cards">
+                        <datalist id="card-datalist"></datalist>
+                        <input class="btn submit-button my-2 my-sm-0" type="submit" id="submitCard" value="Search">
+                    </form>
+                </div>
+                <img class="top-buffer" id="cardImage" src=""></a>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="dropdown">
+                    <h5>Number of translation rounds:</h5>
+                    <select class="form-control" id="numberChoice">
+                      <option>Select a number</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div>
+                <div class="top-buffer">
+                    <input class="btn submit-button my-2 my-sm-0" type="submit" id="translateCard" value="Translate Card">
+                </div>
+                <div class="top-buffer">
+                    <h4 id="cardName"></h4>
+                    <p id="cardType"></p>
+                    <p id="cardRarity"></p>
+                    <p id="cardDescription"></p>
+                    <p id="cardFlavor"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

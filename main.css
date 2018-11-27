@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: white;
+    height: 1000px;
+}
+
+#titleImg{
+    background-image: url("http://media.wizards.com/2015/images/daily/cardart_VIE_Flight.jpg");
+    background-repeat: no-repeat;
+    background-size: 65%;
+    font-family: 'Tangerine', serif;
+    color: black;
+    font-size: 5em;
+}
+
+#cardImage{
+    max-width: 400px;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.search-col {
+    color: white;
+}
+
+.submit-button {
+    background-color: #4d004d;
+    color: white;
+}
